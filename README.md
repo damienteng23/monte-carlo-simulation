@@ -6,10 +6,11 @@ https://docs.streamlit.io/get-started/installation/command-line
 cd myproject
 py -3.13 -m venv .venv
 .venv\Scripts\Activate.ps1
-streamlit hello
+streamlit hello << to test if setup is ok
 
 ## To run locally
-python -m streamlit run monte_carlo.py
+cd ..\repos\monte-carlo-simulation\monte_carlo
+streamlit run .\core.py
 
 # 🧠 Project Structure Overview
 
