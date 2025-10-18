@@ -1,8 +1,5 @@
 # monte-carlo-simulation
 Monte Carlo simulation via streamlit  
-  
-Also known as the Monte Carlo Method or a multiple probability simulation, Monte Carlo Simulation is a mathematical technique that is used to estimate the possible outcomes of an uncertain event. The Monte Carlo Method was invented by John von Neumann and Stanislaw Ulam during World War II to improve decision making under uncertain conditions. It was named after a well-known casino town, called Monaco, since the element of chance is core to the modeling approach, similar to a game of roulette.
-
 
 ## Setup
 https://docs.streamlit.io/get-started/installation/command-line

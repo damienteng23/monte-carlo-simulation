@@ -7,7 +7,6 @@ import random
 
 # --- Streamlit UI ---
 def show_heatmap(n_simulations=500):
-    st.title("🂡 🂭 Blackjack Monte Carlo Simulation")
     st.markdown("Simulating win rates for player hand totals vs dealer upcards.")
 
     player_totals = range(4, 22)
