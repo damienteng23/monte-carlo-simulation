@@ -3,8 +3,8 @@ import streamlit as st
 def description_what_is_monte_carlo():
     st.write(
         "Also known as the Monte Carlo Method or a multiple probability simulation, "
-        "It is a mathematical technique used to estimate the possible outcomes of an "
-        "uncertain event "
+        "it is a mathematical technique used to estimate the possible outcomes of an "
+        "uncertain event. "
     )
 
 def description_fun_fact():
@@ -45,8 +45,8 @@ def description_blackjack_assumptions():
     with col1:
         st.write("""
             **🧩 Play Order**
-            - Player receives 2 cards face up.
-            - Dealer receives one upcard and one hole card.
+            - Player receives 2 cards facing up (upcard).
+            - Dealer receives one upcard and one hole card (card facing down).
 
             **🎯 Player Actions**
             - **Hit**: Take another card.
