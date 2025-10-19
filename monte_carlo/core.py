@@ -1,8 +1,8 @@
 import streamlit as st
 from descriptions import *
+from histogram import *
 from circle_in_square import mc_pi
 from heatmap import show_heatmap
-from helpers import st_slider
 
 # Streamlit page configuration
 st.set_page_config(layout="wide")
@@ -26,7 +26,7 @@ with col2:
 col1, col2 = st.columns(2)
 
 with col2:
-    pi_simulations = st_slider("Number of Random Points",1,100000,100)
+    pi_simulations = st.slider("Number of Random Points",1,100000,100)
     error_percent = mc_pi(pi_simulations)
 
 with col1:
@@ -49,7 +49,7 @@ description_blackjack_assumptions()
 col1, col2 = st.columns(2)
 
 with col1:
-    n_simulations = st_slider("Number of simulations per cell",1,4000,500)
+    n_simulations = st.slider("Number of simulations per cell",1,4000,500)
     show_heatmap(n_simulations)
 
 with col2:
@@ -57,3 +57,9 @@ with col2:
     description_heatmap_simulation_results()
 
 #endregion
+
+# region Histogram
+st.subheader("Okay... but how can I tell what is my actual win rate against the house? 📈")
+description_win_rate()
+show_histogram(100000)
+# endregion

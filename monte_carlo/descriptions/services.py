@@ -98,3 +98,10 @@ def description_heatmap_simulation_results():
             - Dealer strength is pivotal—adjust your strategy based on their upcard, not just your total
         """)
 
+def description_win_rate():
+    st.write("""
+        Let's play with a simple strategy to maximize our win rate against the house! 
+        - Assume that after observing the heatmap, players will always stand on 17 or higher, else 
+        player will hit
+        - Players will also always draw whenver he/she is below 17
+    """)
