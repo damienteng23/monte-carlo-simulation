@@ -1,1 +1,2 @@
-from .display import show_histogram
+from .display import *
+from .services import *

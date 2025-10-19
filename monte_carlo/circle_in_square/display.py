@@ -3,15 +3,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def mc_pi(num_points):
-    st.slider("Number of Random Points",1,num_points,100)
+    points = st.slider("Number of Random Points",1,num_points,100)
 
     # Generate random points in a unit square
-    x = np.random.uniform(-1, 1, num_points)
-    y = np.random.uniform(-1, 1, num_points)
+    x = np.random.uniform(-1, 1, points)
+    y = np.random.uniform(-1, 1, points)
 
     # Check if points fall inside the unit circle
     inside_circle = x**2 + y**2 <= 1
-    pi_estimate = 4 * np.sum(inside_circle) / num_points
+    pi_estimate = 4 * np.sum(inside_circle) / points
     error_percent = abs(pi_estimate - np.pi) / np.pi * 100
 
     # Plot setup
@@ -19,7 +19,7 @@ def mc_pi(num_points):
     ax.set_aspect('equal')
     ax.set_xlim([-1, 1])
     ax.set_ylim([-1, 1])
-    ax.set_title(f"Estimated π ≈ {pi_estimate:.8f} using {num_points} points")
+    ax.set_title(f"Estimated π ≈ {pi_estimate:.8f} using {points} points")
 
     # Plot square boundary
     square = plt.Rectangle((-1, -1), 2, 2, edgecolor='black', facecolor='none')

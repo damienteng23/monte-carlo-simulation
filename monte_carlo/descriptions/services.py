@@ -51,7 +51,6 @@ def description_blackjack_assumptions():
             **🎯 Player Actions**
             - **Hit**: Take another card.
             - **Stand**: Keep current hand.
-            - **Double Down**: Double bet, take one card, then stand.
             - **Split**: If two cards are same value, split into two hands.
         """)
 
@@ -79,7 +78,7 @@ def description_simulation_details():
 
 def description_heatmap_simulation_results():
     st.write(
-        "The heatmap visualizes our win rates, darker reds indicate higher "
+        "We can visualize strategic strength of hand combinations! Darker reds indicate higher "
         "win rates, allowing us to quickly identify optimal plays! "
     )
     with st.expander("What does this tell us?"):
@@ -100,8 +99,72 @@ def description_heatmap_simulation_results():
 
 def description_win_rate():
     st.write("""
+        We will now track the sum of the final hand of the players/dealers after each game, and plot a histogram to see the distribution. 
         Let's play with a simple strategy to maximize our win rate against the house! 
         - Assume that after observing the heatmap, players will always stand on 17 or higher, else 
         player will hit
-        - Players will also always draw whenver he/she is below 17
+        - Assume that after observing the heatmap, if players draw a same value pair below 17, he/she will always split
     """)
+
+def description_win_rate_2():
+    st.write(
+        "Increase the number of plays to get a more accurate representation of your win rate against the house, " 
+        "what do you observe as you increase the number of plays? "
+    )
+    with st.expander("This seems odd, the odds doesnt seem to be that much better than the dealers..."):
+        st.write(
+            "As you increase the number of plays, the histogram should start to resemble a normal distribution due to the Central Limit Theorem. "
+            "This means that the results will cluster around the mean win rate, providing a clearer picture of your performance against the house. "
+            "This histogram also assumes that dealer will not implement any strategies, and will always hit below 17 and stand on 17 or higher."
+        )
+    with st.expander("Central Limit Theorem?"):
+        st.write(
+            "When you take a large number of random samples from any population (regardless of its original distribution), "
+            "the distribution of the sample means will tend to be normal (bell-shaped). "
+        )
+
+def description_bankroll_result():
+    st.write(
+        "The bankroll trajectory chart illustrates how your cumulative profit or loss evolves over time as you play multiple hands of Blackjack. "
+        "By simulating a series of hands, we can visualize the fluctuations in your bankroll based on wins, losses, and draws against the dealer."
+    )
+    with st.expander("How should I interpret this chart? 🤔"):
+        st.write("""
+            - **Upward Trends**: Indicate periods of consistent wins, suggesting effective strategies.
+            - **Downward Trends**: Reflect losing streaks, highlighting potential weaknesses in strategy.
+            - **Volatility**: Frequent fluctuations may suggest high-risk strategies; steadier lines indicate more conservative play.
+            - **Break-even Points**: Points where the bankroll crosses the initial value can indicate shifts in luck or strategy effectiveness.
+        """)
+    with st.expander("What am I looking at? 😟"):
+        st.write("""
+            Even with basic strategy, the casino has a built-in edge — typically around 0.5% to 1%. Over thousands of hands, this edge compounds, slowly draining your bankroll.
+            Here’s how the edge is baked into the rules:
+        """)
+        st.table({
+            "Rule or Mechanic": [
+                "Dealer acts last",
+                "Dealer wins ties (in some games)",
+                "No player-to-player interaction",
+                "Blackjack pays 6:5 instead of 3:2",
+                "Dealer hits on soft 17",
+                "No double after split",
+                "No resplit aces",
+                "Limited splits",
+                "No late surrender",
+                "Continuous shuffle",
+                "Eight-deck shoe"
+            ],
+            "How It Favors the House": [
+                "Players bust before dealer plays — automatic loss",
+                "Pushes are rare; house may win ties depending on rules",
+                "You can’t team up or share info — house plays solo",
+                "Lower payout increases house edge significantly",
+                "Increases dealer win rate on borderline hands",
+                "Reduces player flexibility and win potential",
+                "Limits recovery options after splitting aces",
+                "Restricts strategic hand separation",
+                "Removes a valuable escape option for bad hands",
+                "Prevents card counting and deck tracking",
+                "Dilutes card counting and increases variance"
+            ]
+        })

@@ -1,3 +1,4 @@
+from line_chart import show_bankroll_chart
 import streamlit as st
 from descriptions import *
 from histogram import *
@@ -58,15 +59,17 @@ with col2:
 
 # region Histogram
 st.subheader("Okay... but how can I tell what is my actual win rate against the house? 📈")
-st.title("Blackjack Final Hand Totals 🙏")
+st.title("Blackjack Winning Rate? 🙏")
 description_win_rate()
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.write("test")
-
+    description_win_rate_2()
 with col2:
-    show_histogram(40000)
+    show_histogram(60000)
+# endregion
 
+# region Bankroll Line Chart
+show_bankroll_chart(50000, 10)
 # endregion
