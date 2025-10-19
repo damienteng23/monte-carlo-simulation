@@ -7,7 +7,7 @@ import random
 
 # --- Streamlit UI ---
 def show_heatmap(n_simulations=500):
-    st.markdown("Simulating win rates for player hand totals vs dealer upcards.")
+    st.subheader("Simulating win rates for player hand totals vs dealer upcards")
 
     player_totals = range(4, 22)
     dealer_upcards = [2,3,4,5,6,7,8,9,10,11]  # 11 = Ace
@@ -26,6 +26,5 @@ def show_heatmap(n_simulations=500):
                 cmap="coolwarm", cbar_kws={'label': 'Win Rate'}, ax=ax)
     ax.set_xlabel("Dealer Upcard")
     ax.set_ylabel("Player Total")
-    ax.set_title("Player Win Rate vs Dealer Upcard")
 
     st.pyplot(fig)
