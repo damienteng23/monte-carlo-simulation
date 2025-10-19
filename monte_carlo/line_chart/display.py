@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 
 # Streamlit UI
 def show_bankroll_chart(num_hands, bet_size):
-    st.title("📈 Blackjack Bankroll Trajectory")
-    st.subheader("Let's see how my bankroll would look over time! 💰")
+    st.title("📈 Bankroll Trajectory")
+    st.subheader("Let's make it rain 💰!")
     description_bankroll_result()
 
     num_hands = st.slider("Number of Simulated Hands", 1, num_hands, 1)

@@ -9,6 +9,15 @@ from heatmap import show_heatmap
 st.set_page_config(layout="wide")
 st.sidebar.title("Find Me")
 
+st.sidebar.markdown(
+    """
+    [![LinkedIn](https://cdn-icons-png.flaticon.com/32/174/174857.png)](https://www.linkedin.com/in/damien-teng-672461128/)
+    
+    [![GitHub](https://cdn-icons-png.flaticon.com/32/25/25231.png)](https://github.com/damienteng23/monte-carlo-simulation)
+    """,
+    unsafe_allow_html=True
+)
+
 st.title("🂡 🂭 Monte Carlo Simulation")
 
 # region Descriptions
@@ -72,4 +81,9 @@ with col2:
 
 # region Bankroll Line Chart
 show_bankroll_chart(50000, 10)
+# endregion
+
+# region Conclusion
+st.header("Conclusion...? 🏁")
+description_conclusion()
 # endregion

@@ -168,3 +168,14 @@ def description_bankroll_result():
                 "Dilutes card counting and increases variance"
             ]
         })
+
+def description_conclusion():
+    st.write("""
+        Alas, it seems that even with optimal basic strategy, the house edge in Blackjack remains a formidable challenge for players 😔
+        Over thousands of hands, the slight advantage held by the casino gradually erodes the player's bankroll,
+        underscoring the inherent difficulty of overcoming the odds in this classic card game.  
+
+        ...yet, who knows what the future holds?
+        As simulations grow more sophisticated and algorithms evolve, we may one day uncover strategies that dynamically adapt to shoe composition, exploit subtle dealer patterns, or even leverage real-time statistical modeling to tilt the odds.
+    """)
+    st.header("🚀 May the odds (cards in this case) be ever in you favour! 🚀")
