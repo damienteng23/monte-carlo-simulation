@@ -1,9 +1,9 @@
 # Monte Carlo Simulation
-My attempt in understanding financial concepts by blending in my technical expertise with financial knowledge sourced from the web!
+My attempt in understanding financial concepts by blending in my technical expertise with financial knowledge sourced from the web! Please do kindly let me know if there are any mistakes or issues to be resolved as well, thank you!
 
 # 🧠 Project Structure Overview
 
-This layout is optimized for clarity, modularity, and ADHD-friendly development. Each part has a clear role and purpose.
+This layout is optimized for clarity & modularity. Each part has a clear role and purpose.
 
 ## 📁 Module Structure
 
