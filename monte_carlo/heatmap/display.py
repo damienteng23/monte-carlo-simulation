@@ -6,7 +6,9 @@ import numpy as np
 import random
 
 # --- Streamlit UI ---
-def show_heatmap(n_simulations=500):
+def show_heatmap(n_simulations):
+    n_simulations = st.slider("Number of simulations per cell",1,n_simulations,500)
+
     st.subheader("Simulating win rates for player hand totals vs dealer upcards")
 
     player_totals = range(4, 22)

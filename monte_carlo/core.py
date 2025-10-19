@@ -26,8 +26,7 @@ with col2:
 col1, col2 = st.columns(2)
 
 with col2:
-    pi_simulations = st.slider("Number of Random Points",1,100000,100)
-    error_percent = mc_pi(pi_simulations)
+    error_percent = mc_pi(100000)
 
 with col1:
     st.subheader("Finding Patterns? 🤔")
@@ -49,8 +48,7 @@ description_blackjack_assumptions()
 col1, col2 = st.columns(2)
 
 with col1:
-    n_simulations = st.slider("Number of simulations per cell",1,4000,500)
-    show_heatmap(n_simulations)
+    show_heatmap(4000)
 
 with col2:
     st.subheader("Heatmap Simulation Results 📊")
@@ -60,6 +58,15 @@ with col2:
 
 # region Histogram
 st.subheader("Okay... but how can I tell what is my actual win rate against the house? 📈")
+st.title("Blackjack Final Hand Totals 🙏")
 description_win_rate()
-show_histogram(100000)
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.write("test")
+
+with col2:
+    show_histogram(40000)
+
 # endregion

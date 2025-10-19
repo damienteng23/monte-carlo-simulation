@@ -4,8 +4,7 @@ import matplotlib.pyplot as plt
 from .services import simulate_totals
 
 def show_histogram(num_hands):
-    st.title("🃏 Blackjack Final Hand Totals")
-    num_hands = st.slider("Number of Simulated Hands", 100, num_hands)
+    num_hands = st.slider("Number of Simulated Hands", 1, num_hands)
 
     player_totals = simulate_totals(num_hands)
     dealer_totals = simulate_totals(num_hands)
@@ -25,7 +24,7 @@ def show_histogram(num_hands):
     ax.set_xticklabels(bins)
     ax.set_xlabel("Final Hand Total")
     ax.set_ylabel("Frequency")
-    ax.set_title(f"Final Hand Totals for {num_hands} Simulated Hands")
+    ax.set_title(f"Final Hand Sum for {num_hands} Simulated Hands")
     ax.legend()
 
     st.pyplot(fig)
