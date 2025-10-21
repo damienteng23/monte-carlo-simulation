@@ -1,0 +1,27 @@
+name: Scheduled Empty Commit
+
+on:
+  schedule:
+    - cron: '0 */11 * * *'  # Every 11 hours UTC
+
+jobs:
+  push-empty-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master branch
+        uses: actions/checkout@v3
+        with:
+          ref: master
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create and push empty commit
+        run: |
+          git commit --allow-empty -m "Scheduled empty commit"
+          git push origin master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
