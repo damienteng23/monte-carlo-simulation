@@ -22,6 +22,8 @@ jobs:
       - name: Create and push empty commit
         run: |
           git commit --allow-empty -m "Scheduled empty commit"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}
           git push origin master
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
